@@ -1,0 +1,265 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel-Project API Documentation",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/all": {
+            "get": {
+                "tags": [
+                    "Issue"
+                ],
+                "summary": "Get all of the issues",
+                "operationId": "issueAll",
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    }
+                }
+            }
+        },
+        "/api/store": {
+            "post": {
+                "tags": [
+                    "Issue"
+                ],
+                "summary": "Create a new issue",
+                "operationId": "issueCreate",
+                "parameters": [
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Issue title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Issue description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for testing",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "output_example": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer",
+                                                    "example": ""
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "example": [
+                                            {
+                                                "id": "120",
+                                                "title": "some_title",
+                                                "description": "some_description"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    }
+                }
+            }
+        },
+        "/api/show": {
+            "get": {
+                "tags": [
+                    "Issue"
+                ],
+                "summary": "Show current issue",
+                "operationId": "issueShow",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Issue id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Everything is fine"
+                    }
+                }
+            }
+        },
+        "/api/update": {
+            "put": {
+                "tags": [
+                    "Issue"
+                ],
+                "summary": "Update the issue",
+                "description": "Display the specified resource.",
+                "operationId": "3072f2b39b768a75e507ea06528595b3",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Issue id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "title",
+                        "in": "query",
+                        "description": "Issue title",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "description",
+                        "in": "query",
+                        "description": "Issue description",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for testing",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                },
+                                                "title": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                },
+                                                "description": {
+                                                    "type": "string",
+                                                    "example": ""
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "example": [
+                                            {
+                                                "id": "120",
+                                                "name": "new_title",
+                                                "description": "new_description"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        },
+        "/api/delete": {
+            "delete": {
+                "tags": [
+                    "Issue"
+                ],
+                "summary": "Delete the issue",
+                "description": "Display the specified resource.",
+                "operationId": "f2b51a0af69a01210cb0f1ee2b9569b6",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "query",
+                        "description": "Issue id",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Data packet for testing",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "data": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "id": {}
+                                            },
+                                            "type": "object"
+                                        },
+                                        "example": [
+                                            {
+                                                "id": "120"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "500": {
+                        "description": "Server error"
+                    }
+                }
+            }
+        }
+    }
+}
